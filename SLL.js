@@ -19,9 +19,17 @@ class SLL {
     }
 
     display(){
-        console.log(this.start.item);
-        console.log(this.start.next.item);
-        console.log(this.start.next.next.item);
+        let current = this.start 
+        //it is compulsasry  to copy this.start to current because , this.start will be destroyed completely if used insted of current
+
+        while(current !== null){
+            console.log(current.item);
+            current = current.next;
+        }
+
+        // for(let current = this.start ; current !== null ; current = current.next){
+        //     console.log(current.item);
+        // }
 
        
     }

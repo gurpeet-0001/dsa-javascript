@@ -16,10 +16,20 @@ class SLL {
 
     insertLast(data){
         const node = new Node(data , null);
+        let current = this.start ;
+        //keep going as long as current.next is notEmpty
+        while(current.next !== null){ 
+            current = current.next
+        }
 
+        current.next = node ; 
     }
     display(){
-        console.log(this.start);
+        let current = this.start;
+        while(current !== null){
+            console.log(current.item);
+            current = current.next
+        }
     }
 }
 
@@ -27,4 +37,6 @@ const list = new SLL();
 list.insert('firstItem');
 list.insert('secondItem');
 list.insert('thirdItem');
+list.insertLast('forthItem');
 list.display();
+ 
